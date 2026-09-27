@@ -1,0 +1,199 @@
+/* Colour scheme & Typography */
+:root {
+    --primary: #1a1a2e;
+    --secondary: #16213e;
+    --accent: #0f3460;
+    --highlight: #e94560;
+    --light: #f5f5f5;
+    --text: #222222;
+    --font-main: 'Roboto', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --radius: 8px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --max-width: 950px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; border-bottom: 3px solid var(--highlight); padding-bottom: 0.3rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin-bottom: 1rem; }
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--highlight);
+    text-decoration: underline;
+}
+
+/* ============================================================
+   LAYOUT CONTAINER
+   ============================================================ */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* ============================================================
+   HEADER & NAVIGATION
+   ============================================================ */
+header {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--light);
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--light);
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius);
+    transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--highlight);
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 1.5rem 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* ID Photo */
+.id-photo {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--highlight);
+    margin: 1rem auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.id-photo:hover {
+    transform: scale(1.15);
+}
+
+/* Content Blocks */
+.card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Resume Styles */
+
+.resume-item {
+    margin-bottom: 1.2rem;
+}
+.resume-item h3 {
+    color: var(--accent);
+}
+.resume-item .meta {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Projects */
+.project-list {
+    list-style: square inside;
+    padding-left: 1rem;
+}
+.project-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Bookmark */
+.bookmark-link {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+}
+.bookmark-link:hover {
+    background: var(--highlight);
+    color: #fff;
+}
+
+footer {
+    background-color: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Mobile and desktop layouts rspectively */
+@media (min-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+    h1 { font-size: 2.5rem; }
+    nav ul { gap: 2rem; }
+}
+
+@media (min-width: 950px) {
+    .container {
+        padding: 2rem;
+    }
+    h1 { font-size: 3rem; }
+    .card {
+        padding: 2rem;
+    }
+    .id-photo {
+        width: 180px;
+        height: 180px;
+    }
+}
